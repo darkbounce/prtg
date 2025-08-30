@@ -1,0 +1,9 @@
+eval "$(ssh-agent -s)"
+#ssh-add ~/.ssh/localadmin.pem
+ssh-add ~/.ssh/michiel.pem
+
+git add -A
+git commit -m "Auto backup"
+git push 
+
+

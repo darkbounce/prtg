@@ -18,33 +18,33 @@
         url: https://downloads.paessler.com/prtg/prtg.zip
         dest: C:\Install\prtg\prtg.zip
 
-    - name: Extract the zipfile
-      community.windows.win_unzip:
-        src: C:\Install\prtg\prtg.zip
-        dest: C:\Install\prtg\
+    # - name: Extract the zipfile
+    #   community.windows.win_unzip:
+    #     src: C:\Install\prtg\prtg.zip
+    #     dest: C:\Install\prtg\
 
-    # get name of the installer
-    - name: Find the name of the installer
-      ansible.windows.win_find:
-        paths: C:\Install\prtg\
-        patterns: ['*.exe']
-      register: Installer
+    # # get name of the installer
+    # - name: Find the name of the installer
+    #   ansible.windows.win_find:
+    #     paths: C:\Install\prtg\
+    #     patterns: ['*.exe']
+    #   register: Installer
 
-    # Get name of install file
-    - name: Name of the installer
-      ansible.builtin.debug:
-        msg: "{{ Installer.files[0].path }}"
+    # # Get name of install file
+    # - name: Name of the installer
+    #   ansible.builtin.debug:
+    #     msg: "{{ Installer.files[0].path }}"
 
-    # Install the application
-    - name: Install PRTG
-      ansible.windows.win_command:
-        argv: 
-          - "{{ Installer.files[0].path }}"
-          - "/VERYSILENT" 
-          - "/LANG=English" 
-          - "/LOG=C:\PRTG_install.log" 
-      register: feedback
-      failed_when: feedback.rc != 0 or feedback.rc != 88
+    # # Install the application
+    # - name: Install PRTG
+    #   ansible.windows.win_command:
+    #     argv: 
+    #       - "{{ Installer.files[0].path }}"
+    #       - "/VERYSILENT" 
+    #       - "/LANG=English" 
+    #       - "/LOG=C:\PRTG_install.log" 
+    #   register: feedback
+    #   failed_when: feedback.rc != 0 or feedback.rc != 88
       
      
 
