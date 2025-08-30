@@ -43,8 +43,4 @@
           - "/VERYSILENT" 
           - "/LANG=English" 
           - "/LOG=C:\PRTG_install.log" 
-      register: feedback
-      failed_when: feedback.rc != 0 or feedback.rc != 88
-      
-     
-
+          
