@@ -42,5 +42,5 @@
           - "{{ Installer.files[0].path }}"
           - "/VERYSILENT" 
           - "/LANG=English" 
-          - "/LOG=C:\PRTG_install.log" 
+          - "/LOG=C:\\PRTG_install.log" 
           
